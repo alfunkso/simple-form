@@ -2,19 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {submit} from "../actions";
+import '../styles/Submit.css'
 
 const debug = require('debug')('alfunkso.net:Submit');
 
 function Submit({submittable, submit}) {
     debug("Rendering...");
     return (
-        <button
-            className="Submit"
-            onClick={submit}
-            disabled={!submittable}
-        >
-            Submit
-        </button>
+        <div className="SubmitContainer">
+            <button
+                className="Submit"
+                onClick={submit}
+                disabled={!submittable}
+            >
+                Submit
+            </button>
+        </div>
     );
 }
 

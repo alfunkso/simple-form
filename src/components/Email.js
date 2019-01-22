@@ -2,18 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {changeEmail} from "../actions";
+import '../styles/Email.css';
 
 const debug = require('debug')('alfunkso.net:Email');
 
 function Email({email, onChangeEmail}) {
     debug("Rendering...");
     return (
-        <input
-            className="Email"
-            type="email"
-            onChange={onChangeEmail}
-            value={email}
-        />
+        <div className="EmailContainer">
+            <input
+                className="Email"
+                type="email"
+                onChange={onChangeEmail}
+                value={email}
+            />
+        </div>
     );
 }
 
