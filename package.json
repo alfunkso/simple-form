@@ -1,7 +1,9 @@
 {
   "name": "simple-form",
   "version": "0.1.0",
+  "description": "A simple login form that does email format validation and password longer than 4 characters.",
   "private": true,
+  "homepage": "https://alfunkso.net/simple-form/",
   "dependencies": {
     "debug": "^4.1.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -26,6 +28,10 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:alfunkso/simple-form.git"
   },
   "browserslist": [
     ">0.2%",
