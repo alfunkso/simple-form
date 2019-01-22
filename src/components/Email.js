@@ -20,6 +20,7 @@ function Email({email, emailIsValid, onChangeEmail}) {
                 type="email"
                 onChange={onChangeEmail}
                 value={email}
+                required
             />
             {
                 !emailIsValid &&

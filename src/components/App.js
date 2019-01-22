@@ -10,9 +10,11 @@ function App() {
     debug("Rendering...");
     return (
         <div className="App">
-            <Email />
-            <Password />
-            <Submit />
+            <div className="Form">
+                <Email />
+                <Password />
+                <Submit />
+            </div>
         </div>
     );
 }

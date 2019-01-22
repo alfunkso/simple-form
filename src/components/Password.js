@@ -20,6 +20,7 @@ function Password({password, passwordIsValid, onChangePassword}) {
                 type="password"
                 value={password}
                 onChange={onChangePassword}
+                required
             />
             {
                 !passwordIsValid &&

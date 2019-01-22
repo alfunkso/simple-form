@@ -1,0 +1,25 @@
+.SubmitContainer {
+
+}
+
+.SubmitContainer .SubmitHelperText {
+
+}
+
+.SubmitContainer .Submit {
+    width: 100%;
+    color: #FFFFFF;
+    border: 1px solid #6716FC;
+    background: #390992;
+    margin: 0.5em 0;
+    padding: 0.2em 0.6em;
+    border-radius: 0.4em;
+    cursor: pointer;
+}
+
+.SubmitContainer .Submit:disabled {
+    color: #6716FC;
+    border: 1px solid #390992;
+    background: #390992;
+    cursor: default;
+}

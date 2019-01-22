@@ -7,28 +7,39 @@ import '../styles/Submit.css'
 
 const debug = require('debug')('alfunkso.net:Submit');
 
-function Submit({submittable, submit}) {
+function Submit({submittable, submitted, submit}) {
     debug("Rendering...");
     return (
         <div className="SubmitContainer">
-            <button
-                className="Submit"
-                onClick={submit}
-                disabled={!submittable}
-            >
-                Submit
-            </button>
+            {
+                submitted
+                    ?
+                    <div className="SubmitHelperText">
+                        Thank you for your clicking Login!
+                    </div>
+                    :
+                    <button
+                        className="Submit"
+                        onClick={submit}
+                        disabled={!submittable}
+                        title={!submittable ? "Must fill the form with valid info" : "Submit"}
+                    >
+                        Login
+                    </button>
+            }
         </div>
     );
 }
 
 Submit.propTypes = {
     submittable: PropTypes.bool.isRequired,
+    submitted: PropTypes.bool.isRequired,
     submit: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
     submittable: isSubmittable(state),
+    submitted: state.get("submitted"),
 });
 
 const mapDispatchToProps = (dispatch) => ({
