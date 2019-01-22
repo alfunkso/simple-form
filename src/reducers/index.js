@@ -7,7 +7,7 @@ export default (state = fromJS(model()), action = {}) => {
         // eslint-disable-next-line no-useless-escape
         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(state.get("email"));
     const validPassword = (state) =>
-        state.get("password").length() > 4;
+        state.get("password").length > 4;
 
     const updateSubmittable = (state) =>
         state.set("submittable", validEmail(state) && validPassword(state));
