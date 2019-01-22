@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {submit} from "../actions";
+import {isSubmittable} from "../selectors";
 import '../styles/Submit.css'
 
 const debug = require('debug')('alfunkso.net:Submit');
@@ -27,7 +28,7 @@ Submit.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-    submittable: state.get("submittable"),
+    submittable: isSubmittable(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
