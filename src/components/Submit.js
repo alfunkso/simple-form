@@ -18,7 +18,7 @@ function Submit({submittable, submitted, submit}) {
                     <div className="SubmitHelperText">
                         <div>
                             Thank you for your clicking Login!
-                            <br />Here's Pacman.
+                            <br />{"Here's Pacman."}
                         </div>
                         <img src={Pacman} alt="Pacman" />
                     </div>
