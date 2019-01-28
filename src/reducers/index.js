@@ -1,6 +1,6 @@
+import {fromJS} from "immutable";
 import * as Types from '../actions/types';
 import model from '../model';
-import {fromJS} from "immutable";
 
 export default (state = fromJS(model()), action = {}) => {
     switch (action.type) {

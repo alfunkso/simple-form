@@ -2,8 +2,7 @@
   "extends": [
     "tslint-config-airbnb",
     "tslint:recommended",
-    "tslint-react",
-    "tslint-config-prettier"
+    "tslint-react"
   ],
   "defaultSeverity": "warning",
   "linterOptions": {

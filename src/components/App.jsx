@@ -7,16 +7,16 @@ import '../styles/App.css';
 const debug = require('debug')('alfunkso.net:App');
 
 function App() {
-    debug("Rendering...");
-    return (
-        <div className="App">
-            <div className="Form">
-                <Email />
-                <Password />
-                <Submit />
-            </div>
-        </div>
-    );
+  debug("Rendering...");
+  return (
+    <div className="App">
+      <div className="Form">
+        <Email />
+        <Password />
+        <Submit />
+      </div>
+    </div>
+  );
 }
 
 App.propTypes = {};

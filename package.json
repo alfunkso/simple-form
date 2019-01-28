@@ -52,7 +52,7 @@
     "test:all": "react-scripts test - --watchAll",
     "test:lint": "npm run test:eslint && npm run test:tslint",
     "test:eslint": "eslint --ext=js --ext=jsx .",
-    "test:tslint": "tslint src/**/*.ts",
+    "test:tslint": "tslint --project tsconfig.json src/**/*.ts",
     "test:coverage": "npm run test -- --coverage",
     "eject": "react-scripts eject"
   },
