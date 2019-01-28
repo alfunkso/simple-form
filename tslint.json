@@ -1,7 +1,14 @@
 {
   "extends": [
-    "tslint-config-airbnb"
+    "tslint-config-airbnb",
+    "tslint-config-prettier",
+    "tslint-eslint-rules",
+    "tslint-react"
   ],
+  "rules": {
+    "function-name": false,
+    "jsx-no-multiline-js": false
+  },
   "defaultSeverity": "warning",
   "jsRules": true,
   "linterOptions": {
