@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "tslint-config-airbnb",
+    "tslint-react"
+  ],
+  "jsRules": {
+    "no-empty": true
+  },
+  "defaultSeverity": "warning",
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**/*.ts"
+    ]
+  }
+}
