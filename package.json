@@ -4,7 +4,7 @@
   "description": "A simple login form that does email format validation and password longer than 4 characters.",
   "license": "BSD-3-Clause",
   "private": true,
-  "homepage": "https://alfunkso.net/simple-form/",
+  "homepage": ".",
   "dependencies": {
     "@material-ui/core": "^3.9.1",
     "@material-ui/icons": "^3.0.2",
