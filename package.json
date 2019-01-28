@@ -12,6 +12,7 @@
     "@types/node": "^10.12.18",
     "@types/react": "^16.7.22",
     "@types/react-dom": "^16.0.11",
+    "@types/react-redux": "^7.0.1",
     "debug": "^4.1.1",
     "i18next": "^14.0.1",
     "i18next-browser-languagedetector": "^2.2.4",
@@ -52,7 +53,7 @@
     "test:all": "react-scripts test - --watchAll",
     "test:lint": "npm run test:eslint && npm run test:tslint",
     "test:eslint": "eslint --ext=js --ext=jsx .",
-    "test:tslint": "tslint --project tsconfig.json src/**/*.ts",
+    "test:tslint": "tslint --config tslint.json --project tsconfig.json",
     "test:coverage": "npm run test -- --coverage",
     "eject": "react-scripts eject"
   },

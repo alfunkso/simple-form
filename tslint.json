@@ -1,10 +1,9 @@
 {
   "extends": [
-    "tslint-config-airbnb",
-    "tslint:recommended",
-    "tslint-react"
+    "tslint-config-airbnb"
   ],
   "defaultSeverity": "warning",
+  "jsRules": true,
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
