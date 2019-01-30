@@ -1,9 +1,9 @@
 {
   "extends": [
-    "tslint-config-airbnb",
     "tslint-config-prettier",
     "tslint-eslint-rules",
-    "tslint-react"
+    "tslint-react",
+    "tslint-config-airbnb"
   ],
   "rules": {
     "function-name": false,

@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import Email from './Email';
 import Password from './Password';
-import Submit from './Submit.tsx';
+import Submit from './Submit';
 import '../styles/App.css';
 
 const debug = require('debug')('alfunkso.net:App');

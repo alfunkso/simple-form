@@ -1,9 +1,10 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import * as ReactRedux from 'react-redux';
+import { Dispatch } from 'redux';
+import { connect } from 'react-redux';
 import { submit } from '../actions';
 import { isSubmittable } from '../selectors';
 import '../styles/Submit.css';
+import { Map } from 'immutable';
 
 const PACMAN_SVG = require('./Pacman-1s-200px.svg');
 
@@ -11,11 +12,11 @@ const debug = require('debug')('alfunkso.net:Submit');
 
 export interface Props {
   submittable: boolean;
-  submitted: boolean;
-  submit: (event: object) => any;
+  submitted?: boolean;
+  onSubmit: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-function Submit({ submittable, submitted, submit }: Props) {
+function Submit({ submittable, submitted, onSubmit }: Props) {
   debug('Rendering...');
   return (
     <div className="SubmitContainer">
@@ -37,7 +38,7 @@ function Submit({ submittable, submitted, submit }: Props) {
             <button
               type="button"
               className="Submit"
-              onClick={submit}
+              onClick={onSubmit}
               disabled={!submittable}
               title={!submittable ? 'Must fill the form with valid info' : 'Submit'}
             >
@@ -49,21 +50,15 @@ function Submit({ submittable, submitted, submit }: Props) {
   );
 }
 
-Submit.propTypes = {
-  submittable: PropTypes.bool.isRequired,
-  submitted: PropTypes.bool.isRequired,
-  submit: PropTypes.func.isRequired,
-};
-
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: Map<string, any>) => ({
   submittable: isSubmittable(state),
   submitted: state.get('submitted'),
 });
 
-const mapDispatchToProps = (dispatch: (action: any) => any) => ({
-  submit: () => dispatch(submit()),
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  onSubmit: () => dispatch(submit()),
 });
 
-export default ReactRedux.connect(mapStateToProps, mapDispatchToProps)(
+export default connect(mapStateToProps, mapDispatchToProps)(
   Submit,
 );
