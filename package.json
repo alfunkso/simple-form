@@ -51,15 +51,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:all": "npm run test:lint && npm run test:jest",
-    "test:lint": "npm run test:eslint && npm run test:tslint",
-    "test:eslint": "eslint --ext=js --ext=jsx src/",
+    "test:lint": "npm run test:tslint",
+    "test:eslint": "eslint src/** --ext=js --ext=jsx",
     "test:tslint": "tslint --config tslint.json --project tsconfig.json",
     "test:jest": "react-scripts test - --passWithNoTests --forceExit",
     "test:coverage": "react-scripts test - --coverage",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "author": {
     "name": "Alfonso Cornejo",

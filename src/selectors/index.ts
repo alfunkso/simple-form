@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect';
 import { EMAIL_REGEXP } from '../constants';
 
-const emailSelector = state => state.get('email');
+const emailSelector = (state: any) => state.get('email');
 
-const passwordSelector = state => state.get('password');
+const passwordSelector = (state: any) => state.get('password');
 
 export const emailIsValidSelector = createSelector(
   emailSelector,
