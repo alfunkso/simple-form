@@ -17,6 +17,16 @@
   "settings": {
     "react": {
       "version": "16.6"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
     }
   }
 }

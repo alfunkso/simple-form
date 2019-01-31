@@ -3,7 +3,7 @@ import { Action } from '../actions';
 import * as constants from '../constants';
 import model from '../model';
 
-export default (state = fromJS(model()) as Map<string, any>, action: Action) => {
+export default (state = fromJS(model()) as Map<string, any>, action: Action): Map<string, any> => {
   switch (action.type) {
     case constants.CHANGE_EMAIL_ACTION_TYPE:
       return state.set('email', action.payload.email);
