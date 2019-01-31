@@ -15,6 +15,7 @@
     "js-object-pretty-print": "^0.3.0",
     "moment": "^2.24.0",
     "notistack": "^0.4.1",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-i18next": "^9.0.9",
@@ -42,7 +43,7 @@
     "test": "react-scripts test",
     "test:all": "npm run test:lint && npm run test:jest",
     "test:lint": "npm run test:eslint",
-    "test:eslint": "eslint src/** --ext=js --ext=jsx",
+    "test:eslint": "eslint --ext=js --ext=jsx .",
     "test:jest": "react-scripts test - --passWithNoTests --forceExit",
     "test:coverage": "react-scripts test - --coverage"
   },
