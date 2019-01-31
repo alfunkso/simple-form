@@ -13,6 +13,7 @@
     "i18next-browser-languagedetector": "^2.2.4",
     "immutable": "^4.0.0-rc.12",
     "js-object-pretty-print": "^0.3.0",
+    "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "notistack": "^0.4.1",
     "prop-types": "^15.6.2",
