@@ -1,9 +1,10 @@
 import { createSelector } from 'reselect';
 import { EMAIL_REGEXP } from '../constants';
+import { Map } from 'immutable';
 
-const emailSelector = (state: any) => state.get('email');
+const emailSelector = (state: Map<string, any>) => state.get('email');
 
-const passwordSelector = (state: any) => state.get('password');
+const passwordSelector = (state: Map<string, any>) => state.get('password');
 
 export const emailIsValidSelector = createSelector(
   emailSelector,

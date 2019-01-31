@@ -1,9 +1,4 @@
 import * as React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { changeEmail } from '../actions';
-import { emailIsValidSelector } from '../selectors';
-import { Map } from 'immutable';
 import '../styles/Email.css';
 
 const debug = require('debug')('alfunkso.net:Email');
@@ -14,7 +9,7 @@ export interface Props {
   onChangeEmail: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function Email({ email, emailIsValid, onChangeEmail }: Props) {
+export default function Email({ email, emailIsValid, onChangeEmail }: Props) {
   debug('Rendering...');
   return (
     <div className="EmailContainer">
@@ -40,17 +35,3 @@ function Email({ email, emailIsValid, onChangeEmail }: Props) {
     </div>
   );
 }
-
-const mapStateToProps = (state: Map<string, any>) => ({
-  email: state.get('email'),
-  emailIsValid: emailIsValidSelector(state),
-});
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  onChangeEmail: (event: React.ChangeEvent<HTMLInputElement>) =>
-    dispatch(changeEmail(event.target.value)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(
-  Email,
-);

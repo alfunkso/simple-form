@@ -1,9 +1,4 @@
 import * as React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { changePassword } from '../actions';
-import { passwordIsValidSelector } from '../selectors';
-import { Map } from 'immutable';
 import '../styles/Password.css';
 
 const debug = require('debug')('alfunkso.net:Password');
@@ -14,7 +9,7 @@ export interface Props {
   onChangePassword: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function Password({ password, passwordIsValid, onChangePassword }: Props) {
+export default function Password({ password, passwordIsValid, onChangePassword }: Props) {
   debug('Rendering...');
   return (
     <div className="PasswordContainer">
@@ -40,17 +35,3 @@ function Password({ password, passwordIsValid, onChangePassword }: Props) {
     </div>
   );
 }
-
-const mapStateToProps = (state: Map<string, any>) => ({
-  password: state.get('password'),
-  passwordIsValid: passwordIsValidSelector(state),
-});
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  onChangePassword: (event: React.ChangeEvent<HTMLInputElement>) =>
-    dispatch(changePassword(event.target.value)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(
-  Password,
-);

@@ -1,10 +1,5 @@
 import * as React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { submit } from '../actions';
-import { isSubmittable } from '../selectors';
 import '../styles/Submit.css';
-import { Map } from 'immutable';
 
 const PACMAN_SVG = require('./Pacman-1s-200px.svg');
 
@@ -16,7 +11,7 @@ export interface Props {
   onSubmit: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-function Submit({ submittable, submitted, onSubmit }: Props) {
+export default function Submit({ submittable, submitted, onSubmit }: Props) {
   debug('Rendering...');
   return (
     <div className="SubmitContainer">
@@ -49,16 +44,3 @@ function Submit({ submittable, submitted, onSubmit }: Props) {
     </div>
   );
 }
-
-const mapStateToProps = (state: Map<string, any>) => ({
-  submittable: isSubmittable(state),
-  submitted: state.get('submitted'),
-});
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  onSubmit: () => dispatch(submit()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(
-  Submit,
-);
