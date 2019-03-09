@@ -1,33 +1,23 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import '../styles/Password.css';
+import TextField from '@material-ui/core/TextField';
 
 const debug = require('debug')('alfunkso.net:Password');
 
 function Password({ password, passwordIsValid, onChangePassword }) {
   debug('Rendering...');
   return (
-    <div className="PasswordContainer">
-      <label htmlFor="password-input">
-        Password
-        <input
-          id="password-input"
-          className="Password"
-          type="password"
-          value={password}
-          onChange={onChangePassword}
-          required
-        />
-      </label>
-      {
-        !passwordIsValid
-        && (
-          <div className="PasswordHelperText">
-            Must enter a Password longer than 4 characters.
-          </div>
-        )
-      }
-    </div>
+    <TextField
+      id="password-input"
+      label="Password"
+      type="password"
+      value={password}
+      onChange={onChangePassword}
+      error={!passwordIsValid}
+      helperText={!passwordIsValid && 'Must enter a Password longer than 4 characters.'}
+      fullWidth
+      required
+    />
   );
 }
 

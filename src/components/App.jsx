@@ -1,8 +1,8 @@
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
 import EmailContainer from '../containers/EmailContainer';
 import PasswordContainer from '../containers/PasswordContainer';
 import SubmitContainer from '../containers/SubmitContainer';
-import '../styles/App.css';
 
 const debug = require('debug')('alfunkso.net:App');
 
@@ -10,11 +10,11 @@ function App() {
   debug('Rendering...');
   return (
     <div className="App">
-      <div className="Form">
+      <Paper>
         <EmailContainer />
         <PasswordContainer />
         <SubmitContainer />
-      </div>
+      </Paper>
     </div>
   );
 }

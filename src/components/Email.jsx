@@ -1,33 +1,23 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import '../styles/Email.css';
+import TextField from '@material-ui/core/TextField';
 
 const debug = require('debug')('alfunkso.net:EmailContainer');
 
 function Email({ email, emailIsValid, onChangeEmail }) {
   debug('Rendering...');
   return (
-    <div className="EmailContainer">
-      <label htmlFor="email-input">
-        Email
-        <input
-          id="email-input"
-          className="Email"
-          type="email"
-          onChange={onChangeEmail}
-          value={email}
-          required
-        />
-      </label>
-      {
-        !emailIsValid
-        && (
-          <div className="EmailHelperText">
-            Must enter a valid Email.
-          </div>
-        )
-      }
-    </div>
+    <TextField
+      id="email-input"
+      label="Email"
+      type="email"
+      value={email}
+      onChange={onChangeEmail}
+      error={!emailIsValid}
+      helperText={!emailIsValid && 'Must enter a valid Email.'}
+      fullWidth
+      required
+    />
   );
 }
 
