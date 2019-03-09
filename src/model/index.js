@@ -1,5 +1,5 @@
 export default () => ({
-    email: "",
-    password: "",
-    submitted: false,
+  email: '',
+  password: '',
+  submitted: false,
 });
